@@ -2,3 +2,6 @@ _build
 .elixir_ls
 .idea
 examples
+deps
+
+extoy.iml
