@@ -5,8 +5,9 @@ defmodule Extoy.MixProject do
     [
       app: :extoy,
       version: "0.1.0",
-      elixir: "~> 1.15",
+      elixir: "~> 1.12",
       start_permanent: Mix.env() == :prod,
+      package: package(),
       deps: deps()
     ]
   end
@@ -15,6 +16,19 @@ defmodule Extoy.MixProject do
   def application do
     [
       extra_applications: [:logger]
+    ]
+  end
+
+  def package do
+    [
+      # This option is only needed when you don't want to use the OTP application name
+      name: "extoy",
+      # These are the default files included in the package
+      files: ~w(lib priv .formatter.exs mix.exs README* readme* LICENSE*
+                license* CHANGELOG* changelog* src),
+      links: %{
+        "GitHub" => "https://github.com/TIZ36/extoy"
+      }
     ]
   end
 
